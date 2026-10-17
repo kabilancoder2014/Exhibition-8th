@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your AI Career Prediction — Results</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="top-nav">
+    <div class="nav-wrap">
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <a href="index.html" class="brand">
+          <div class="brand-icon">✨</div>
+          <span class="brand-title">CareerAI</span>
+        </a>
+        <a href="form.html" class="nav-back-link">
+          ← Edit Preferences
+        </a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="form.html" class="btn btn-outline">
+          🔄 Retake Test
+        </a>
+        <button id="btn-print-report" class="btn btn-primary">
+          📄 Print Career Report
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Results Page Container -->
+  <main class="results-page-container">
+    
+    <!-- Results Header -->
+    <div class="results-page-header">
+      <div class="hero-pill-badge" style="margin-bottom: 12px;">
+        <span class="pill-dot"></span>
+        <span>AI Prediction Generated • 8th Science Exhibition</span>
+      </div>
+      <h1 class="results-main-title">Your AI Career Prediction</h1>
+      <p class="results-subtitle">
+        Here are your highest-probability career matches calculated using multi-dimensional vector similarity.
+      </p>
+    </div>
+
+    <!-- Top Match Hero Card (Large, Spacious, 99% Chance) -->
+    <div class="results-top-card">
+      <div class="results-card-top-row">
+        <div>
+          <span class="badge-top">★ #1 Top Predicted Career</span>
+          <h2 class="results-career-name" id="results-career-title">🧬 Biotechnology Specialist</h2>
+          <div class="career-category-tag" id="results-career-category">Healthcare & Life Sciences</div>
+        </div>
+
+        <div class="results-score-box">
+          <div class="results-score-number" id="results-score-value">99%</div>
+          <div class="results-score-lbl">Career Match Chance</div>
+        </div>
+      </div>
+
+      <p class="results-career-description" id="results-career-desc">
+        Applies cellular, genetic, and biomolecular processes to engineer groundbreaking technologies in medicine, gene therapies, disease diagnostics, and agricultural sustainability.
+      </p>
+
+      <!-- Stats Metric Strip -->
+      <div class="results-stats-strip">
+        <div class="stat-item">
+          <div class="stat-title">Estimated Salary Range</div>
+          <div class="stat-val" id="results-salary">$85K - $145K / yr (₹8 - 25 LPA)</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-title">10-Year Projected Growth</div>
+          <div class="stat-val" id="results-growth" style="color: var(--accent-emerald);">+18% Very High</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-title">Career Chance Score</div>
+          <div class="stat-val" style="color: var(--accent-emerald); font-weight: 800;">99% Match</div>
+        </div>
+      </div>
+
+      <!-- AI Narrative Callout -->
+      <div class="rationale-callout" style="margin-bottom: 24px;">
+        <div style="font-weight: 700; color: #a5b4fc; margin-bottom: 6px; font-size: 0.95rem;">
+          🧠 Why the AI Recommends This Career for You:
+        </div>
+        <p id="results-narrative" style="line-height: 1.6; font-size: 0.92rem; color: #e2e8f0;">
+          The AI career prediction engine calculated a 99% career compatibility chance for Biotechnology Specialist.
+        </p>
+      </div>
+
+      <!-- Roadmap & Exam Requirements -->
+      <div class="results-specs-grid">
+        <div class="spec-card">
+          <h4>🎓 Recommended Degree Pathway</h4>
+          <p id="results-edu" style="color: #93c5fd; font-weight: 600; margin-top: 4px;">
+            B.Tech / B.Sc in Biotechnology → M.Sc / Ph.D
+          </p>
+        </div>
+        <div class="spec-card">
+          <h4>📝 Key National Entrance Exams</h4>
+          <p id="results-exams" style="color: #6ee7b7; font-weight: 600; margin-top: 4px;">
+            CUET, GATE, JEE Main, GAT-B, NEET
+          </p>
+        </div>
+      </div>
+
+      <!-- Core Skills to Build -->
+      <div style="margin-top: 20px;">
+        <h4 style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 8px;">⚡ Essential Skills to Develop:</h4>
+        <div class="skill-tags" id="results-skills"></div>
+      </div>
+    </div>
+
+    <!-- Runners-Up Section -->
+    <div class="card" style="margin-top: 32px;">
+      <div class="card-title-row">
+        <div>
+          <h3>Other High-Compatibility Career Options</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 2px;">
+            Click on any career to view entrance exams, degree pathways, and daily tasks
+          </p>
+        </div>
+      </div>
+      <div class="runners-list" id="results-runners-list"></div>
+    </div>
+
+    <!-- Bottom Action Navigation -->
+    <div class="results-bottom-actions">
+      <a href="form.html" class="btn btn-outline btn-large">
+        ← Edit Your Preferences & Retake
+      </a>
+      <button onclick="window.print()" class="btn btn-primary btn-large">
+        📄 Print / Save Career Report
+      </button>
+      <a href="index.html" class="btn btn-outline btn-large">
+        🏠 Back to Home
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Interactive Career Detail Modal -->
+  <div class="modal-overlay" id="career-modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close" id="modal-close-btn">&times;</button>
+      <div style="font-size: 0.75rem; color: var(--accent-cyan); font-weight: 700; text-transform: uppercase;" id="modal-career-category">Category</div>
+      <h2 style="font-size: 1.5rem; margin: 4px 0 10px;" id="modal-career-title">Career Title</h2>
+      <p style="font-size: 0.88rem; color: #cbd5e1; line-height: 1.5; margin-bottom: 16px;" id="modal-career-desc">Description</p>
+
+      <div class="stats-strip" style="margin-bottom: 16px;">
+        <div class="stat-item">
+          <div class="stat-title">Salary Band</div>
+          <div class="stat-val" id="modal-career-salary">-</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-title">Growth Outlook</div>
+          <div class="stat-val" id="modal-career-outlook" style="color: var(--accent-emerald);">-</div>
+        </div>
+      </div>
+
+      <div class="specs-list">
+        <div class="spec-line">
+          <strong>🎓 Education:</strong>
+          <span id="modal-career-edu">-</span>
+        </div>
+        <div class="spec-line">
+          <strong>📝 Key Exams:</strong>
+          <span id="modal-career-exams" style="color: #6ee7b7;">-</span>
+        </div>
+        <div style="margin-top: 8px;">
+          <strong style="display: block; margin-bottom: 4px;">⚡ Skills to Learn:</strong>
+          <div class="skill-tags" id="modal-career-skills"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/careers-data.js"></script>
+  <script src="js/ai-engine.js"></script>
+  <script src="js/results.js"></script>
+</body>
+</html>
