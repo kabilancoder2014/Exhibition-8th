@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Know Your Career — AI Career Assessment Form</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="top-nav">
+    <div class="nav-wrap">
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <a href="index.html" class="brand">
+          <div class="brand-icon">✨</div>
+          <span class="brand-title">CareerAI</span>
+        </a>
+        <a href="index.html" class="nav-back-link">
+          ← Back to Home
+        </a>
+      </div>
+
+      <div class="nav-actions">
+        <button id="btn-reset-form" class="btn btn-outline">
+          🔄 Reset Form
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Title Header (Heading: Know Your Career) -->
+  <div class="form-page-header">
+    <div class="hero-pill-badge" style="margin-bottom: 12px;">
+      <span class="pill-dot"></span>
+      <span>8th Science & Technology Exhibition 2026</span>
+    </div>
+    <h1 class="know-ur-career-title">Know Your Career</h1>
+    <p class="form-page-subtitle">
+      Fill out the 6-step preference form below. Select <strong>up to 2 choices</strong> in each category to predict your ideal career match.
+    </p>
+
+    <!-- Quick Demonstration Presets -->
+    <div class="presets-wrapper" style="margin-top: 14px;">
+      <span class="presets-label">⚡ Quick Presets:</span>
+      <div id="presets-banner" class="presets-chips-box"></div>
+    </div>
+  </div>
+
+  <!-- Centered Form Container -->
+  <main class="form-container-centered">
+    <div class="card wizard-card">
+      
+      <!-- Stepper Nav Bar (Steps 1 to 6) -->
+      <div class="stepper-nav-bar">
+        <button class="step-nav-pill active" data-step="0">
+          <span class="step-num">1</span>
+          <span class="step-name">Subjects</span>
+          <span class="step-count-badge" id="pill-count-subjects">1/2</span>
+        </button>
+        <button class="step-nav-pill" data-step="1">
+          <span class="step-num">2</span>
+          <span class="step-name">Interests</span>
+          <span class="step-count-badge" id="pill-count-interests">1/2</span>
+        </button>
+        <button class="step-nav-pill" data-step="2">
+          <span class="step-num">3</span>
+          <span class="step-name">Strengths</span>
+          <span class="step-count-badge" id="pill-count-strengths">1/2</span>
+        </button>
+        <button class="step-nav-pill" data-step="3">
+          <span class="step-num">4</span>
+          <span class="step-name">Workplace</span>
+          <span class="step-count-badge" id="pill-count-workplaces">1/2</span>
+        </button>
+        <button class="step-nav-pill" data-step="4">
+          <span class="step-num">5</span>
+          <span class="step-name">Work Style</span>
+          <span class="step-count-badge" id="pill-count-workstyles">1/2</span>
+        </button>
+        <button class="step-nav-pill" data-step="5">
+          <span class="step-num">6</span>
+          <span class="step-name">Goals</span>
+          <span class="step-count-badge" id="pill-count-goals">1/2</span>
+        </button>
+      </div>
+
+      <!-- Step Content Panes -->
+      <div class="wizard-panes-wrapper">
+
+        <!-- Pane 1: Favourite Subjects -->
+        <div class="wizard-pane active" id="pane-0">
+          <div class="pane-header">
+            <div>
+              <span class="pane-step-tag">Step 1 of 6</span>
+              <h3 class="pane-title">What are your favourite academic subjects?</h3>
+              <p class="pane-subtitle">Select up to 2 subjects you enjoy studying the most</p>
+            </div>
+            <span class="counter-tag is-one" id="counter-subjects">1/2 selected</span>
+          </div>
+
+          <div class="ordered-tiles-grid">
+            <div class="choice-tile selected" data-group="subjects" data-val="biology">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">🧬</span>
+              <span class="tile-text">Biology</span>
+            </div>
+            <div class="choice-tile" data-group="subjects" data-val="computer_science">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">💻</span>
+              <span class="tile-text">Computer Science</span>
+            </div>
+            <div class="choice-tile" data-group="subjects" data-val="physics">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">⚡</span>
+              <span class="tile-text">Physics</span>
+            </div>
+            <div class="choice-tile" data-group="subjects" data-val="mathematics">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">📐</span>
+              <span class="tile-text">Mathematics</span>
+            </div>
+            <div class="choice-tile" data-group="subjects" data-val="chemistry">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">🧪</span>
+              <span class="tile-text">Chemistry</span>
+            </div>
+            <div class="choice-tile" data-group="subjects" data-val="psychology">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">🧠</span>
+              <span class="tile-text">Psychology</span>
+            </div>
+            <div class="choice-tile" data-group="subjects" data-val="arts">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">🎨</span>
+              <span class="tile-text">Arts & Design</span>
+            </div>
+            <div class="choice-tile" data-group="subjects" data-val="economics">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">📊</span>
+              <span class="tile-text">Economics</span>
+            </div>
+            <div class="choice-tile" data-group="subjects" data-val="business_studies">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">💼</span>
+              <span class="tile-text">Business Studies</span>
+            </div>
+            <div class="choice-tile" data-group="subjects" data-val="law_civics">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">⚖️</span>
+              <span class="tile-text">Law & Civics</span>
+            </div>
+            <div class="choice-tile" data-group="subjects" data-val="environmental_science">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">🌱</span>
+              <span class="tile-text">Environmental</span>
+            </div>
+            <div class="choice-tile" data-group="subjects" data-val="literature">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">📚</span>
+              <span class="tile-text">Literature</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pane 2: Core Interests -->
+        <div class="wizard-pane" id="pane-1">
+          <div class="pane-header">
+            <div>
+              <span class="pane-step-tag">Step 2 of 6</span>
+              <h3 class="pane-title">What activities drive your curiosity?</h3>
+              <p class="pane-subtitle">Select up to 2 areas that ignite your intrinsic motivation</p>
+            </div>
+            <span class="counter-tag is-one" id="counter-interests">1/2 selected</span>
+          </div>
+
+          <div class="ordered-tiles-grid">
+            <div class="choice-tile selected" data-group="interests" data-val="research">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">🔬</span>
+              <span class="tile-text">Scientific Research</span>
+            </div>
+            <div class="choice-tile" data-group="interests" data-val="coding">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">👨‍💻</span>
+              <span class="tile-text">Coding & AI</span>
+            </div>
+            <div class="choice-tile" data-group="interests" data-val="building_hardware">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">🤖</span>
+              <span class="tile-text">Hardware & Robots</span>
+            </div>
+            <div class="choice-tile" data-group="interests" data-val="healthcare">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">🏥</span>
+              <span class="tile-text">Healthcare & Medicine</span>
+            </div>
+            <div class="choice-tile" data-group="interests" data-val="space">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">🚀</span>
+              <span class="tile-text">Space Exploration</span>
+            </div>
+            <div class="choice-tile" data-group="interests" data-val="design">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">✨</span>
+              <span class="tile-text">Creative Design</span>
+            </div>
+            <div class="choice-tile" data-group="interests" data-val="finance">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">📈</span>
+              <span class="tile-text">Finance & Markets</span>
+            </div>
+            <div class="choice-tile" data-group="interests" data-val="entrepreneurship">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">💡</span>
+              <span class="tile-text">Startups & Business</span>
+            </div>
+            <div class="choice-tile" data-group="interests" data-val="environment">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">🌱</span>
+              <span class="tile-text">Climate & Nature</span>
+            </div>
+            <div class="choice-tile" data-group="interests" data-val="gaming">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">🎮</span>
+              <span class="tile-text">Gaming & Media</span>
+            </div>
+            <div class="choice-tile" data-group="interests" data-val="neuroscience">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">🧠</span>
+              <span class="tile-text">Brain & Mind</span>
+            </div>
+            <div class="choice-tile" data-group="interests" data-val="social_justice">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">⚖️</span>
+              <span class="tile-text">Social Justice</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pane 3: Natural Strengths -->
+        <div class="wizard-pane" id="pane-2">
+          <div class="pane-header">
+            <div>
+              <span class="pane-step-tag">Step 3 of 6</span>
+              <h3 class="pane-title">What are your natural cognitive superpowers?</h3>
+              <p class="pane-subtitle">Select up to 2 skills that feel effortless to you</p>
+            </div>
+            <span class="counter-tag is-one" id="counter-strengths">1/2 selected</span>
+          </div>
+
+          <div class="ordered-tiles-grid">
+            <div class="choice-tile selected" data-group="strengths" data-val="analytical">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">🔍</span>
+              <span class="tile-text">Analytical Mind</span>
+            </div>
+            <div class="choice-tile" data-group="strengths" data-val="problem_solving">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">🧩</span>
+              <span class="tile-text">Problem Solving</span>
+            </div>
+            <div class="choice-tile" data-group="strengths" data-val="hands_on">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">🛠️</span>
+              <span class="tile-text">Hands-on Tools</span>
+            </div>
+            <div class="choice-tile" data-group="strengths" data-val="creativity">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">💡</span>
+              <span class="tile-text">Creative Vision</span>
+            </div>
+            <div class="choice-tile" data-group="strengths" data-val="mathematical">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">🧮</span>
+              <span class="tile-text">Math Precision</span>
+            </div>
+            <div class="choice-tile" data-group="strengths" data-val="empathy">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">🤝</span>
+              <span class="tile-text">Empathy & Listening</span>
+            </div>
+            <div class="choice-tile" data-group="strengths" data-val="strategic_planning">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">🎯</span>
+              <span class="tile-text">Strategic Planning</span>
+            </div>
+            <div class="choice-tile" data-group="strengths" data-val="public_speaking">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">🎙️</span>
+              <span class="tile-text">Public Speaking</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pane 4: Ideal Workplace -->
+        <div class="wizard-pane" id="pane-3">
+          <div class="pane-header">
+            <div>
+              <span class="pane-step-tag">Step 4 of 6</span>
+              <h3 class="pane-title">Where do you do your best work?</h3>
+              <p class="pane-subtitle">Select up to 2 preferred work environments</p>
+            </div>
+            <span class="counter-tag is-one" id="counter-workplaces">1/2 selected</span>
+          </div>
+
+          <div class="ordered-tiles-grid">
+            <div class="choice-tile selected" data-group="workplaces" data-val="laboratory">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">🧫</span>
+              <span class="tile-text">Laboratory / R&D</span>
+            </div>
+            <div class="choice-tile" data-group="workplaces" data-val="tech_office">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">🏢</span>
+              <span class="tile-text">Tech Campus</span>
+            </div>
+            <div class="choice-tile" data-group="workplaces" data-val="hospital">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">🏨</span>
+              <span class="tile-text">Hospital / Clinic</span>
+            </div>
+            <div class="choice-tile" data-group="workplaces" data-val="studio">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">🎨</span>
+              <span class="tile-text">Design Studio</span>
+            </div>
+            <div class="choice-tile" data-group="workplaces" data-val="startup_incubator">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">🚀</span>
+              <span class="tile-text">Startup Hub</span>
+            </div>
+            <div class="choice-tile" data-group="workplaces" data-val="field">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">🏞️</span>
+              <span class="tile-text">Field & Outdoors</span>
+            </div>
+            <div class="choice-tile" data-group="workplaces" data-val="remote">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">💻</span>
+              <span class="tile-text">Remote / Home</span>
+            </div>
+            <div class="choice-tile" data-group="workplaces" data-val="research_hospital">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">🏥</span>
+              <span class="tile-text">Research Institute</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pane 5: Work Style & Rhythm -->
+        <div class="wizard-pane" id="pane-4">
+          <div class="pane-header">
+            <div>
+              <span class="pane-step-tag">Step 5 of 6</span>
+              <h3 class="pane-title">How do you prefer to collaborate?</h3>
+              <p class="pane-subtitle">Select up to 2 work styles that match your natural personality</p>
+            </div>
+            <span class="counter-tag is-one" id="counter-workstyles">1/2 selected</span>
+          </div>
+
+          <div class="ordered-tiles-grid">
+            <div class="choice-tile selected" data-group="workstyles" data-val="independent">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">🧘</span>
+              <span class="tile-text">Deep Focus / Solo</span>
+            </div>
+            <div class="choice-tile" data-group="workstyles" data-val="collaborative">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">👥</span>
+              <span class="tile-text">Team Collaboration</span>
+            </div>
+            <div class="choice-tile" data-group="workstyles" data-val="fast_paced">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">⚡</span>
+              <span class="tile-text">Fast-Paced</span>
+            </div>
+            <div class="choice-tile" data-group="workstyles" data-val="structured">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">📋</span>
+              <span class="tile-text">Structured & Methodical</span>
+            </div>
+            <div class="choice-tile" data-group="workstyles" data-val="creative_freedom">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">🎨</span>
+              <span class="tile-text">Creative Freedom</span>
+            </div>
+            <div class="choice-tile" data-group="workstyles" data-val="leadership">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">👑</span>
+              <span class="tile-text">Leading & Managing</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pane 6: Core Life Goal -->
+        <div class="wizard-pane" id="pane-5">
+          <div class="pane-header">
+            <div>
+              <span class="pane-step-tag">Step 6 of 6</span>
+              <h3 class="pane-title">What is your primary long-term aspiration?</h3>
+              <p class="pane-subtitle">Select up to 2 career ambitions you value most</p>
+            </div>
+            <span class="counter-tag is-one" id="counter-goals">1/2 selected</span>
+          </div>
+
+          <div class="ordered-tiles-grid">
+            <div class="choice-tile selected" data-group="goals" data-val="innovation">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">🚀</span>
+              <span class="tile-text">Breakthrough Innovation</span>
+            </div>
+            <div class="choice-tile" data-group="goals" data-val="high_earning">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">💰</span>
+              <span class="tile-text">High Earning Potential</span>
+            </div>
+            <div class="choice-tile" data-group="goals" data-val="social_impact">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">❤️</span>
+              <span class="tile-text">Social Impact</span>
+            </div>
+            <div class="choice-tile" data-group="goals" data-val="work_life_balance">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">⚖️</span>
+              <span class="tile-text">Work-Life Balance</span>
+            </div>
+            <div class="choice-tile" data-group="goals" data-val="creative_freedom">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">✨</span>
+              <span class="tile-text">Creative Expression</span>
+            </div>
+            <div class="choice-tile" data-group="goals" data-val="global_mobility">
+              <span class="tile-check">✓</span>
+              <span class="tile-icon">✈️</span>
+              <span class="tile-text">Global Mobility</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Wizard Navigation Footer -->
+      <div class="wizard-footer-nav">
+        <button id="btn-prev-step" class="btn btn-outline" disabled>
+          ← Previous Step
+        </button>
+        <div class="wizard-summary-indicator" id="wizard-step-indicator">
+          Step 1 of 6: Favourite Subjects
+        </div>
+        <button id="btn-next-step" class="btn btn-primary">
+          Next Step: Interests →
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/careers-data.js"></script>
+  <script src="js/ai-engine.js"></script>
+  <script src="js/form.js"></script>
+</body>
+</html>
